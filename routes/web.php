@@ -17,11 +17,11 @@ Route::get('/', 'IndexController@index');
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function () {
     // Route::get('users', function () {
     //     // Matches The "/admin/users" URL
     // });
-    Route::get('/', 'Admin\AdminController@index')->name('home');
+    Route::get('/', 'Admin\AdminController@index')->name('admin')->middleware('isadmin');
     
 });

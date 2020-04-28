@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Home/index');
+        $title='bukan admin';
+        return view('User/home',compact('title'));
     }
 }
