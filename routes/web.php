@@ -12,16 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'IndexController@index');
+Route::get('/', function () {
+        return view('/auth/login');
+    });
+// Route::get('/', 'IndexController@index');
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'User\IndexController@index')->name('home');
 Route::prefix('admin')->group(function () {
     // Route::get('users', function () {
     //     // Matches The "/admin/users" URL
     // });
     Route::get('/', 'Admin\AdminController@index')->name('admin')->middleware('isadmin');
-    
+
 });
