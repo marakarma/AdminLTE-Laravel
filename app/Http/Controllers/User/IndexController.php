@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -14,8 +15,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $title='Universitas Islam Balitar | Blitar';
-        
-        return view('Home/index',compact('title'));
+        $title='Homepage | Blitar';
+
+        return view('User/index',compact('title'));
     }
 }
