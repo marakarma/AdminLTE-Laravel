@@ -1,9 +1,9 @@
-<aside class="main-sidebar elevation-4 sidebar-dark-success">
+<aside class="main-sidebar elevation-4 sidebar-dark-primary">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link navbar-success">
-    <img src="/assets/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+  <a href="/" class="brand-link navbar-primary">
+    <img src="/assets/AdminLTE/dist/img/AdminLTELogo.png" alt="Fell My Spirit Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <span class="brand-text font-weight-light">Fell My Spirit</span>
   </a>
 
   <!-- Sidebar -->
@@ -23,9 +23,9 @@
       <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview {{ (request()->segment(2) == 'web') ? 'menu-open' : '' }}">
+        {{-- <li class="nav-item has-treeview {{ (request()->segment(2) == 'web') ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ (request()->segment(2) == 'web') ? 'active' : '' }}">
-            <i class="fas fa-newspaper"></i>
+            <i class="nav-icon fas fa-newspaper"></i>
             <p>
               Artikel Web
               <i class="right fas fa-angle-left"></i>
@@ -33,45 +33,45 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ url('/') }}/admin/web/kategori" class="nav-link {{ (request()->is('admin/web/kategori')) ? 'active' : '' }}">
+              <a href="/admin/web/kategori" class="nav-link {{ (request()->is('admin/web/kategori')) ? 'active' : '' }}">
                 <i class="fas fa-tags"></i>
                 <p>Kategori</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/') }}/admin/web/artikel" class="nav-link {{ (request()->is('admin/web/artikel')) ? 'active' : '' }}">
+              <a href="/admin/web/artikel" class="nav-link {{ (request()->is('admin/web/artikel')) ? 'active' : '' }}">
                 <i class="far fa-file-alt"></i>
                 <p>Artikel</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/') }}/admin/web/komentar" class="nav-link {{ (request()->is('admin/web/komentar')) ? 'active' : '' }}">
+              <a href="/admin/web/komentar" class="nav-link {{ (request()->is('admin/web/komentar')) ? 'active' : '' }}">
                 <i class="far fa-comment-alt"></i>
                 <p>Komentar</p>
               </a>
             </li>
           </ul>
-        </li>
+        </li> --}}
         
-        <li class="nav-item has-treeview {{ (request()->segment(2) == 'user') ? 'menu-open' : '' }}">
-          <a href="#" class="nav-link {{ (request()->segment(2) == 'user') ? 'active' : '' }}">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+        <li class="nav-item has-treeview {{ (request()->segment(2) == 'manager') ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link {{ (request()->segment(2) == 'manager') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-users-cog"></i>
             <p>
-              Starter Pages
+              Administrasi
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Active Page</p>
+              <a href="/admin/manager/akun" class="nav-link {{ (request()->is('admin/manager/akun')) ? 'active' : '' }}">
+                <i class="nav-icon ion ion-person-add"></i>
+                <p>Akun</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Inactive Page</p>
+                <p>Nilai</p>
               </a>
             </li>
           </ul>

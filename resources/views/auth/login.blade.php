@@ -26,6 +26,11 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
+      @if(\Session::has('alert-danger'))
+        <div class="alert alert-danger text-center">
+          <div>{{Session::get('alert-danger')}}</div>
+        </div>
+      @endif
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form action="{{ route('login') }}" method="post">

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
-class AdminController extends Controller
+class AkunController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $title='Admin | Dashboard';
-        $user=\App\User::where('is_admin','0')->get();
+        $title='Admin | Manager Akun';
+        $user=\App\User::where('is_admin',null)->get();
 
-        return view('Admin.index',compact('title','user'));
+        return view('Admin.akun',compact('title','user'));
     }
 
     /**
