@@ -19,11 +19,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'User\IndexController@index')->name('home');
+Route::get('/dashboard', 'User\IndexController@index')->name('home')->middleware('auth');
 Route::prefix('admin')->group(function () {
     // Route::get('users', function () {
     //     // Matches The "/admin/users" URL
     // });
-    Route::get('/', 'Admin\AdminController@index')->name('admin')->middleware('isadmin');
+    Route::get('/', 'Admin\AdminController@index')->name('admin.home')->middleware('isadmin');
+    Route::get('manager/akun', 'Admin\AkunController@index')->name('admin')->middleware('isadmin');
+    Route::get('manager/akun/{user}/edit', 'Admin\AkunController@edit')->middleware('isadmin');
+    Route::post('manager/akun/{user}/update', 'Admin\AkunController@update')->middleware('isadmin');
+    Route::delete('manager/akun/{user}/hapus', 'Admin\AkunController@destroy')->middleware('isadmin');
 
 });
