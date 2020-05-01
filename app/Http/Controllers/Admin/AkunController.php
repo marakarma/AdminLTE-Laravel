@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 
 class AkunController extends Controller
 {
@@ -15,7 +16,7 @@ class AkunController extends Controller
     public function index()
     {
         $title='Admin | Manager Akun';
-        $user=\App\User::where('is_admin',null)->get();
+        $user=User::where('is_admin',null)->get();
 
         return view('Admin.akun',compact('title','user'));
     }
@@ -58,9 +59,11 @@ class AkunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $title='Admin | Edit Account';
+
+        return view('Admin.editAkun',compact('title','user'));
     }
 
     /**
@@ -70,9 +73,17 @@ class AkunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+
+        $user->name= $request->name;
+        $user->email= $request->email;
+        $user->kelas= $request->kelas;
+        $user->absen= $request->absen;
+
+        $user->save();
+
+        return redirect('/admin/manager/akun')->with('status', 'Account Saved!');
     }
 
     /**
@@ -81,8 +92,10 @@ class AkunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect('/admin/manager/akun')->with('status', 'Account Deleted!');
     }
 }

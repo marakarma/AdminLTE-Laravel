@@ -3,7 +3,7 @@
   <a href="/" class="brand-link navbar-primary">
     <img src="/assets/AdminLTE/dist/img/AdminLTELogo.png" alt="Fell My Spirit Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">Fell My Spirit</span>
+    <span class="brand-text font-weight-light">Feel My Spirit</span>
   </a>
 
   <!-- Sidebar -->
@@ -57,7 +57,7 @@
           <a href="#" class="nav-link {{ (request()->segment(2) == 'manager') ? 'active' : '' }}">
             <i class="nav-icon fas fa-users-cog"></i>
             <p>
-              Administrasi
+              Administration
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -65,13 +65,13 @@
             <li class="nav-item">
               <a href="/admin/manager/akun" class="nav-link {{ (request()->is('admin/manager/akun')) ? 'active' : '' }}">
                 <i class="nav-icon ion ion-person-add"></i>
-                <p>Akun</p>
+                <p>Account</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Nilai</p>
+                <p>Score</p>
               </a>
             </li>
           </ul>
@@ -79,9 +79,9 @@
         
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link ">
-            <i class="fas fa-tools"></i>
+            <i class="nav-icon fas fa-tools"></i>
             <p>
-              Lainnya
+              More
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>

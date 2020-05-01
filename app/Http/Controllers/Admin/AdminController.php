@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 
 
 class AdminController extends Controller
@@ -16,7 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         $title='Admin | Dashboard';
-        $user=\App\User::where('is_admin','0')->get();
+        $user=User::where('is_admin',null)->get();
 
         return view('Admin.index',compact('title','user'));
     }

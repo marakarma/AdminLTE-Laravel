@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Manager Akun</h1>
+          <h1 class="m-0 text-dark">Account Manager</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Manager Akun</li>
+            <li class="breadcrumb-item active">Account Manager</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -32,7 +32,7 @@
             @endif
             <div class="card-header">
               {{-- <a href="/admin/manager/akun/tambah" class="btn btn-primary">Tambah Akun</a> --}}
-              <h3>Akun Siswa</h3>
+              <h3>Student Account</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -40,12 +40,12 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Nama Akun</th>
+                    <th>Name</th>
                     <th>email</th>
-                    <th>Kelas</th>
-                    <th>Absen</th>
-                    <th>Tanggal Dibuat</th>
-                    <th>Aksi</th>
+                    <th>Class</th>
+                    <th>Absent</th>
+                    <th>Created At</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                       <form action="/admin/manager/akun/{{$item->id}}/hapus"method="post" class="d-inline">
                       @method('delete')            
                       @csrf
-                        <button type="submit"class="btn btn-danger">Hapus</button>
+                        <button type="submit"class="btn btn-danger">Delete</button>
                       </form>
                   </td>
                 </tr>
