@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Registration Page</title>
+  <title> Registration Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,12 +21,12 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="/assets/AdminLTE/index2.html"><b>Admin</b>LTE</a>
+    <a href="/assets/AdminLTE/index2.html"><b>User</b>Join</a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Create Your Account</p>
 
       <form action="{{ route('register') }}" method="post">
         @csrf
@@ -56,6 +56,22 @@
             </span>
           @enderror
         </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control @error('hp') is-invalid @enderror" name="hp" value="{{ old('hp') }}" required autocomplete="hp" placeholder="HP">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+          @error('hp')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+        </div>  
+              
+
         <div class="input-group mb-3">
           <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
           <div class="input-group-append">
@@ -94,7 +110,7 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center">
+      {{-- <div class="social-auth-links text-center">
         <p>- OR -</p>
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i>
@@ -104,9 +120,9 @@
           <i class="fab fa-google-plus mr-2"></i>
           Sign up using Google+
         </a>
-      </div>
+      </div> --}}
 
-      <a href="login.html" class="text-center">I already have a membership</a>
+      <a href="login.html" class="text-center">I already have a Account</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

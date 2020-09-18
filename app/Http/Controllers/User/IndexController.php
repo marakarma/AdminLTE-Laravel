@@ -15,7 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $title='Homepage | Blitar';
+        $title='Homepage | Buyer';
 
         return view('User/index',compact('title'));
     }

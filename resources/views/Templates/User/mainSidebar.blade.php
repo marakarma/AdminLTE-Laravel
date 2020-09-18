@@ -1,9 +1,9 @@
-<aside class="main-sidebar elevation-4 sidebar-dark-success">
+<aside class="main-sidebar elevation-4 sidebar-dark-danger">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link navbar-success">
+  <a href="index3.html" class="brand-link navbar-danger">
     <img src="/assets/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">Feel My Spirit</span>
+    <span class="brand-text font-weight-light">User Page</span>
   </a>
 
   <!-- Sidebar -->
@@ -98,12 +98,7 @@
               </form>
             </li>
 
-            {{-- <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Inactive Page</p>
-              </a>
-            </li> --}}
+
           </ul>
         </li>
 

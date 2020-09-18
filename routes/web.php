@@ -1,17 +1,8 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Route::get('/', function () {
         return view('/auth/login');
     });
@@ -30,4 +21,10 @@ Route::prefix('admin')->group(function () {
     Route::post('manager/akun/{user}/update', 'Admin\AkunController@update')->middleware('isadmin');
     Route::delete('manager/akun/{user}/hapus', 'Admin\AkunController@destroy')->middleware('isadmin');
 
+    Route::get('web/mystore', 'Admin\StoreController@index')->name('store')->middleware('isadmin');
+    Route::get('web/loyalty', 'Admin\LoyaltyController@index')->name('loyaltypoint')->middleware('isadmin');
+    
+
 });
+
+Route::resource('products','ProductController');

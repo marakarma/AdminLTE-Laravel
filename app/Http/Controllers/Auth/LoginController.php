@@ -9,16 +9,7 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+
 
     use AuthenticatesUsers;
 
@@ -40,14 +31,22 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {   
-        $input = $request->all();
+        //$input = $request->all();
 
         $this->validate($request, [
-            'email' => 'required|email',
+            // 'email' => 'required|email',
+            'hp' => 'required|string',
             'password' => 'required',
         ]);
-
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        //untuk override agar bisa login dengan email dan no hp
+        $loginType = filter_var($request->hp, FILTER_VALIDATE_EMAIL) ? 'email' : 'hp';
+        $login = [
+            $loginType => $request->hp,
+            'password' => $request->password
+        ];
+        //mengarahkan user level ke halaman masing disini admin adalah seller dan user adalah buyer
+        // if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        if (auth()->attempt($login))
         {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->route('admin.home');
@@ -56,7 +55,7 @@ class LoginController extends Controller
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error','Email/HP And Password Are Wrong.');
         }
     }
 }

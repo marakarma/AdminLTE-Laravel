@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $title='Admin | Dashboard';
+        $title='Homepage | Seller';
         $user=User::where('is_admin',null)->get();
 
         return view('Admin.index',compact('title','user'));

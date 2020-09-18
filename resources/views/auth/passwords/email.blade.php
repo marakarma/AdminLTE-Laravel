@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Forgot Password</title>
+  <title>Forgot Password</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/assets/AdminLTE/index2.html"><b>Admin</b>LTE</a>
+    <a href="/assets/AdminLTE/index2.html"><b>Forgot</b>Password</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -60,7 +60,7 @@
         <a href="/login">Login</a>
       </p>
       <p class="mb-0">
-        <a href="/register" class="text-center">Register a new membership</a>
+        <a href="/register" class="text-center">Create Your Account</a>
       </p>
     </div>
     <!-- /.login-card-body -->
